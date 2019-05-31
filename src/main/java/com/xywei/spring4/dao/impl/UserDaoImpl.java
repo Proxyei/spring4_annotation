@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import com.xywei.spring4.dao.UserDao;
 import com.xywei.spring4.domain.User;
 
-@Repository(value="dao001")
+@Repository
 public class UserDaoImpl implements UserDao {
 
 	@Override
@@ -19,6 +19,29 @@ public class UserDaoImpl implements UserDao {
 
 	public void destroyMethod() {
 		System.out.println("销毁容器==" + this);
+	}
+
+	private String version = "1";
+
+	public UserDaoImpl() {
+	}
+
+	public UserDaoImpl(String version) {
+		super();
+		this.version = version;
+	}
+
+	public String getVersion() {
+		return version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+	}
+
+	@Override
+	public String toString() {
+		return "UserDaoImpl [version=" + version + "]";
 	}
 
 }
