@@ -1,1 +1,2 @@
 重温使用annotation全注解实现spring
+1，该版本之前是使用configuration代替xml，new XXX代替<bean id="xx" >
