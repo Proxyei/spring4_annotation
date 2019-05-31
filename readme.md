@@ -2,3 +2,4 @@
 2, // @ComponentScan(value = "com.xywei.spring4")、 @ComponentScan(basePackages = "com.xywei.spring4")等价
 3,@ComponentScan(value = "com.xywei.spring4",includeFilters = {@filter(type="")})的时候，必须禁用默认filter ，也就是userDefaultFilter=false
 4,@ComponentScan(value = "com.xywei.spring4",excludeFilters = {@filter(type="")})中不能使用userDefaultFilter
+5,@import，添加任意一个component标记的组件进入spring容器
