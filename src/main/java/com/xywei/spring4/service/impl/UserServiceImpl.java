@@ -1,11 +1,13 @@
 package com.xywei.spring4.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.xywei.spring4.dao.UserDao;
 import com.xywei.spring4.domain.User;
 import com.xywei.spring4.service.UserService;
 
+@Service(value="user0001")
 public class UserServiceImpl implements UserService {
 
 	private UserDao userDao;

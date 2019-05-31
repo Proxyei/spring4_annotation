@@ -1,8 +1,11 @@
 package com.xywei.spring4.dao.impl;
 
+import org.springframework.stereotype.Repository;
+
 import com.xywei.spring4.dao.UserDao;
 import com.xywei.spring4.domain.User;
 
+@Repository(value="dao001")
 public class UserDaoImpl implements UserDao {
 
 	@Override
