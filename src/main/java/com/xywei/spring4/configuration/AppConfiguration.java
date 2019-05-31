@@ -11,15 +11,20 @@ import com.xywei.spring4.service.impl.UserServiceImpl;
 @Configuration
 public class AppConfiguration {
 
-	@Bean
+	// @Scope(value = "prototype")只销毁单例不销毁多例
+	// name找到第一个就返回
+	@Bean(name = { "userService" }, initMethod = "initMethod", destroyMethod = "destroyMethod")
 	public UserService userService() {
-		//TODO 如果不用autowire如何把dao注入到service？
-		UserServiceImpl userService = new UserServiceImpl();
-		userService.setUserDao(this.userDao());
+
+		// 注入userDao方法一，serviceimpl使用autowire
+		UserService userService = new UserServiceImpl();
+		// 注入userDao方法二
+		// UserServiceImpl userService = new UserServiceImpl();
+		// userService.setUserDao(this.userDao());
 		return userService;
 	}
 
-	@Bean
+	@Bean(name = "userDao001", initMethod = "initMethod", destroyMethod = "destroyMethod")
 	public UserDao userDao() {
 		return new UserDaoImpl();
 	}

@@ -10,4 +10,12 @@ public class UserDaoImpl implements UserDao {
 		return new User("初始值", 0);
 	}
 
+	public void initMethod() {
+		System.out.println("启动容器==" + this);
+	}
+
+	public void destroyMethod() {
+		System.out.println("销毁容器==" + this);
+	}
+
 }
