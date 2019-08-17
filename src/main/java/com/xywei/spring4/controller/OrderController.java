@@ -29,7 +29,7 @@ public class OrderController {
 	}
 
 	/**
-	 * 模拟创建订单的应用
+	 * 模拟创建订单的应用，实际是由监听器完成
 	 * 
 	 * @return
 	 */
